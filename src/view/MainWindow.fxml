@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import view.JoyStick?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainWindowController">
+   <children>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="450.0" prefWidth="1191.0" VBox.vgrow="ALWAYS">
+         <children>
+            <RadioButton focusTraversable="false" layoutX="380.0" layoutY="28.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="132.0" selected="true" text="Manual">
+               <toggleGroup>
+                  <ToggleGroup fx:id="group" />
+               </toggleGroup>
+                </RadioButton>
+            <AnchorPane fx:id="joystickPart" layoutX="270.0" layoutY="57.0" prefHeight="296.0" prefWidth="270.0">
+               <children>
+                  <Label layoutX="115.0" layoutY="33.0" prefHeight="24.0" prefWidth="99.0" text="&lt;-- aileron --&gt;" textAlignment="CENTER">
+                  </Label>
+                  <Slider fx:id="slideRudder" layoutX="95.0" layoutY="222.0" majorTickUnit="0.5" max="1" min="-1" showTickLabels="true" />
+                  <Slider fx:id="slideThrottle" layoutX="50.0" layoutY="57.0" majorTickUnit="0.5" max="1" min="-1" orientation="VERTICAL" showTickLabels="true" />
+                  <Label layoutX="150.0" layoutY="255.0" prefHeight="24.0" prefWidth="99.0" text="rudder" textAlignment="CENTER">
+                  </Label>
+                  <Label layoutX="210.0" layoutY="113.0" rotate="90" text="&lt;-- Elevator --&gt;">
+                  </Label>
+                  <Label layoutX="15.0" layoutY="113.0" rotate="-90" text="throttle">
+                  </Label>
+                  <JoyStick fx:id="joystick"  bigCircleColor="#cc524e" smallCircleColor="#b0130e" circleDim="60.0" layoutX="100.0" layoutY="70.0" prefHeight="120.0" prefWidth="120.0" /> 
+               </children></AnchorPane>
+            <Button fx:id="connect" layoutX="30.0" layoutY="30.0" mnemonicParsing="false" onAction="#connect" text="Connect To FlightGear" />
+         </children></AnchorPane>
+   </children>
+</VBox>
